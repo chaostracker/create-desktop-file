@@ -4,7 +4,7 @@
 
 Say you want to create blender.desktop file in the appropriate place:
 
-    ./create-desktop-icon.py blender
+    $ ./create-desktop-icon.py blender
     
 It will find the executable and default icon path for the application which has to be in the $PATH.
 
