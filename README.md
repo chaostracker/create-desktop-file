@@ -1,4 +1,4 @@
-# create-desktop-icon.py
+# create-desktop-file.py
 
 ## Usage
 
