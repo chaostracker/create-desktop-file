@@ -1,5 +1,12 @@
-# create-desktop-icon
+# create-desktop-icon.py
 
+## Usage
+
+Say you want to create blender.desktop file in the appropriate place:
+
+    ./create-desktop-icon.py blender
+
+## References
 
 https://askubuntu.com/questions/64222/how-can-i-create-launchers-on-my-desktop/64237#64237
 
