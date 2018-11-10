@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# -*- coding: utf-8 -*-
+
 import os
 import sys
 import gi
@@ -51,18 +53,31 @@ def find_executable(executable, path=None):
     else:
         return None
 
-testapp = sys.argv[1]
+if __name__ == '__main__':
 
-executable = find_executable(testapp)
-if executable:
-    template = template.replace("@@exec@@",executable)
-    template = template.replace("@@name@@",testapp)
-    template = template.replace("@@comment@@",testapp)
-    template = template.replace("@@icon@@",str(getAppIconForDefaultTheme(testapp)))
-    filename = os.path.expanduser("~/.local/share/applications/"+testapp+".desktop")
-    with open(filename, 'w') as dfile:
-        dfile.write(template)
-    print("File '" + filename + "' has been created (or overwritten) with contents:")
-    print(template)
-else:
-    print("No app found")
+    testapp = sys.argv[1]
+    fullAppPath = sys.argv[2]
+
+    executable = find_executable(testapp)
+    if executable:
+        template = template.replace("@@exec@@",executable)
+        template = template.replace("@@name@@",testapp)
+        template = template.replace("@@comment@@",testapp)
+        template = template.replace("@@icon@@",str(getAppIconForDefaultTheme(testapp)))
+        filename = os.path.expanduser("~/.local/share/applications/"+testapp+".desktop")
+        with open(filename, 'w') as dfile:
+            dfile.write(template)
+        print("File '" + filename + "' has been created (or overwritten) with contents:")
+        print(template)
+    elif fullAppPath!="":
+        template = template.replace("@@exec@@",fullAppPath)
+        template = template.replace("@@name@@",testapp)
+        template = template.replace("@@comment@@",testapp)
+        template = template.replace("@@icon@@","")
+        filename = os.path.expanduser("~/.local/share/applications/"+testapp+".desktop")
+        with open(filename, 'w') as dfile:
+            dfile.write(template)
+        print("File '" + filename + "' has been created (or overwritten) with contents:")
+        print(template)
+    else:
+        print("No app found")
