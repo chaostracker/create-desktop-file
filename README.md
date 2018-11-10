@@ -8,6 +8,10 @@ Say you want to create blender.desktop file in the appropriate place:
     
 It will find the executable and default icon path for the application which has to be in the $PATH.
 
+Alternatively you can give the full path to the executable as the second argument:
+
+    $ ./create-desktop-icon.py blender /home/someuser/somepath/blender
+
 ## References
 
 Slapped together using:
