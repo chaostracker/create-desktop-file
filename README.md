@@ -1,8 +1,17 @@
-# create-desktop-icon
+# create-desktop-file.py
 
+## Usage
 
-https://askubuntu.com/questions/64222/how-can-i-create-launchers-on-my-desktop/64237#64237
+Say you want to create blender.desktop file in the appropriate place:
 
-https://askubuntu.com/questions/52430/how-can-i-find-the-location-of-an-icon-of-a-launcher-in-use
+    $ ./create-desktop-icon.py blender
+    
+It will find the executable and default icon path for the application which has to be in the $PATH.
 
-https://gist.github.com/techtonik/4368898
+## References
+
+Slapped together using:
+
+- https://askubuntu.com/questions/64222/how-can-i-create-launchers-on-my-desktop/64237#64237
+- https://askubuntu.com/questions/52430/how-can-i-find-the-location-of-an-icon-of-a-launcher-in-use
+- https://gist.github.com/techtonik/4368898
